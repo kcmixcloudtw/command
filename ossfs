@@ -1,0 +1,3 @@
+yum install wget -y
+wget http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/32196/cn_zh/1463121229943/ossfs_1.79.8_centos7.0_x86_64.rpm
+yum localinstall ossfs_1.79.8_centos7.0_x86_64.rpm
