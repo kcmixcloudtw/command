@@ -1,3 +1,3 @@
 yum install epel* -y 
 yum install nginx-all-modules -y
-yum install nginx
+yum install nginx -y
