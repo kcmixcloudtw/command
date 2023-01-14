@@ -17,4 +17,14 @@ docker run --name myadmin -d -e PMA_HOST=127.0.0.1  --network host  phpmyadmin
 systemctl start mariadb
 mysql_secure_installation 
 
+#upgrade mariadb
+yum update
+curl -S https://raw.githubusercontent.com/kcmixcloudtw/config/main/mariadb.repo > /etc/yum.repos.d/MariaDB.repo
 
+yum remove mariadb-server
+yum clean all
+yum install MariaDB-server galera-4 MariaDB-client MariaDB-shared MariaDB-backup MariaDB-common
+systemctl start mariadb
+systemctl enable mariadb
+
+mysql_upgrade
