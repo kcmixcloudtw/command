@@ -1,6 +1,10 @@
+#一開始沒資料 把mariadb 換位置放 然後升級
 yum install epel* -y 
 yum install mariadb-server -y 
+
 mkdir -p /data/mysql /data/logs /data/logs/mysql-logs/  /var/run/mysqld/
+mount /dev/sdb /data
+
 chown mysql:mysql /data -R
 chown mysql:mysql /var/run/mysqld/  -R
 setenforce 0
@@ -8,7 +12,9 @@ timedatectl set-timezone Asia/Taipei
 curl https://get.docker.com | bash 
 systemctl start docker
 docker run --name myadmin -d -e PMA_HOST=127.0.0.1  --network host  phpmyadmin
+#replace /etc/my.cnf
+
 systemctl start mariadb
 mysql_secure_installation 
-#replace /etc/my.cnf
-systemctl restart mariadb
+
+
