@@ -1,7 +1,8 @@
 yum install epel*
 yum install mariadb-server
-mkdir -p /data/mysql /data/logs /data/logs/mysql-logs/
+mkdir -p /data/mysql /data/logs /data/logs/mysql-logs/  /var/run/mysqld/
 chown mysql:mysql /data -R
+chown mysql:mysql /var/run/mysqld/  -R
 setenforce 0
 timedatectl set-timezone Asia/Taipei
 
