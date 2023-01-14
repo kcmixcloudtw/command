@@ -8,6 +8,7 @@ timedatectl set-timezone Asia/Taipei
 curl https://get.docker.com | bash 
 systemctl start docker
 docker run --name myadmin -d -e PMA_HOST=127.0.0.1  --network host  phpmyadmin
+systemctl start mariadb
 mysql_secure_installation 
 #replace /etc/my.cnf
 systemctl restart mariadb
