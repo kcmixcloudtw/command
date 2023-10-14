@@ -1,0 +1,4 @@
+cd /data/backend/
+cat /dev/null > nohup,out
+rm -rf logs/*
+nohup java -jar ruoyi-admin.jar &
